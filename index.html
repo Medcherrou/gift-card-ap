@@ -62,9 +62,8 @@
                             <span class="font-bold">2</span>
                         </div>
                         <div>
-                            <h3 class="font-semibold text-lg">Claim Your Spin!</h3>
-                            <p class="text-gray-400">Once completed, you'll get access to an exciting Spin to Win event!
-                                &#x1F3B0;</p>
+                            <h3 class="font-semibold text-lg">Enter the Draw for a $5 Gift Card!</h3>
+                            <p class="text-gray-400">Complete the offer to enter the $5 Free Fire gift card draw this Sunday! 🎁✨</p>
                         </div>
                     </div>
 
@@ -75,6 +74,7 @@
                     </button>
                 </div>
             </div>
+
 
             <!-- Username Section (Initially Hidden) -->
             <div id="usernameSection"
@@ -138,27 +138,27 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
         import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-    
+
         // Your web app's Firebase configuration (use your own Firebase config)
         const firebaseConfig = {
-        apiKey: "AIzaSyDoeyr3pL_Gd-oGf1SEQbMaaD0OAqH06eM",
-        authDomain: "free-fire-gift-card.firebaseapp.com",
-        projectId: "free-fire-gift-card",
-        storageBucket: "free-fire-gift-card.firebasestorage.app",
-        messagingSenderId: "668744828634",
-        appId: "1:668744828634:web:ed51efe6ed4134273f07e3",
-        measurementId: "G-0RH1ENZ0KN"
+            apiKey: "AIzaSyDoeyr3pL_Gd-oGf1SEQbMaaD0OAqH06eM",
+            authDomain: "free-fire-gift-card.firebaseapp.com",
+            projectId: "free-fire-gift-card",
+            storageBucket: "free-fire-gift-card.firebasestorage.app",
+            messagingSenderId: "668744828634",
+            appId: "1:668744828634:web:ed51efe6ed4134273f07e3",
+            measurementId: "G-0RH1ENZ0KN"
         };
-    
+
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app); // Initialize Firebase Analytics (optional)
         const db = getFirestore(app); // Initialize Firestore
-    
+
         // Function to add TikTok username to Firestore
         async function addUsernameToFirestore(username) {
             const date = new Date().toLocaleString(); // Get the current date and time
-    
+
             try {
                 const docRef = await addDoc(collection(db, "user_entries"), {
                     username: username,
@@ -169,13 +169,13 @@
                 console.error("Error adding document: ", e);
             }
         }
-    
+
         // Function to retrieve and display usernames from Firestore
         async function getEntriesFromFirestore() {
             const querySnapshot = await getDocs(collection(db, "user_entries"));
             const usernamesList = document.getElementById("usernamesList");
             usernamesList.innerHTML = ""; // Clear previous entries
-    
+
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
                 const listItem = document.createElement("li");
@@ -183,7 +183,7 @@
                 usernamesList.appendChild(listItem);
             });
         }
-    
+
         // Handle username submission
         document.getElementById("submitButton").addEventListener("click", () => {
             const username = document.getElementById("tiktokUsername").value.trim();
@@ -195,14 +195,14 @@
                 alert("Please enter a username");
             }
         });
-    
+
         // Load stored usernames when the page is loaded
         window.addEventListener("load", getEntriesFromFirestore);
     </script>
-    
 
 
-    
+
+
 </body>
 
 </html>
