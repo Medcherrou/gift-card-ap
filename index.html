@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire $5 Gift Card - Spin & Win!</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/686/686589.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-900 text-white font-[Poppins]">
+    <!-- Hero Section -->
+    <div class="min-h-screen flex flex-col">
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h1
+                    class="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-600">
+                    Unlock a $5 Free Fire Gift Card! <span class="text-yellow-400">🎁</span><span
+                        class="text-red-500">💥</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                    Welcome, Free Fire Gamer! Ready to score a $5 gift card to boost your game?
+                </p>
+            </div>
+
+            <!-- Offer Section -->
+            <div id="offerSection"
+                class="max-w-md mx-auto bg-gray-800 rounded-xl p-6 shadow-2xl border border-gray-700">
+                <h2 class="text-2xl font-bold mb-4 text-center">Here's How It Works:</h2>
+
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Complete the Quick Offer</h3>
+                            <p class="text-gray-400">Start by clicking the button below to complete an easy and secure
+                                offer from OGAds. &#x1F680;</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg">Claim Your Spin!</h3>
+                            <p class="text-gray-400">Once completed, you'll get access to an exciting Spin to Win event!
+                                &#x1F3B0;</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button id="completeOfferBtn"
+                        class="w-full bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold py-4 px-6 rounded-lg transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        Complete Offer Now! <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Username Section (Initially Hidden) -->
+            <div id="usernameSection"
+                class="max-w-md mx-auto bg-gray-800 rounded-xl p-6 shadow-2xl border border-gray-700 mt-8 hidden">
+                <h2 class="text-2xl font-bold mb-6 text-center">Enter Your TikTok Username &#x1F31F;</h2>
+
+                <div class="space-y-6">
+                    <!-- Gift Card Image -->
+                    <div class="relative rounded-lg overflow-hidden mb-6">
+                        <img src="gift_card_1.jpeg" alt="Free Fire Gift Card"
+                            class="w-full h-48 object-contain rounded-lg">
+                    </div>
+
+                    <!-- Username Input -->
+                    <div class="space-y-2">
+                        <label for="tiktokUsername" class="block text-sm font-medium text-gray-300">TikTok
+                            Username</label>
+                        <input type="text" id="tiktokUsername"
+                            class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
+                            placeholder="@yourusername">
+                        <p id="usernameError" class="text-red-500 text-sm hidden">Please enter your TikTok username</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button id="submitButton"
+                        class="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold py-4 px-6 rounded-lg transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        Submit Entry &#x1F389;
+                    </button>
+                </div>
+            </div>
+
+            <!-- Confirmation Modal (Initially Hidden) -->
+            <div id="confirmationModal"
+                class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden">
+                <div class="bg-gray-800 p-8 rounded-xl max-w-md mx-4 text-center border border-yellow-500">
+                    <i class="fas fa-calendar-check text-6xl text-yellow-500 mb-4"></i>
+                    <h2 class="text-2xl font-bold mb-4">Entry Confirmed! &#x1F389;</h2>
+                    <p class="text-lg mb-6">
+                        Your entry has been recorded! The giveaway winner will be announced on our TikTok channel this
+                        Sunday at 8:00 PM. Stay tuned! &#x1F4FA;
+                    </p>
+                    <button id="closeModal"
+                        class="bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold py-3 px-6 rounded-lg">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center py-4 text-gray-400">
+            <p class="text-sm">&copy; 2025 Free Fire Gift Card Promotion. Not affiliated with Garena Free Fire.</p>
+        </footer>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+    <script type="module">
+        // Import the necessary Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+    
+        // Your web app's Firebase configuration (use your own Firebase config)
+        const firebaseConfig = {
+        apiKey: "AIzaSyDoeyr3pL_Gd-oGf1SEQbMaaD0OAqH06eM",
+        authDomain: "free-fire-gift-card.firebaseapp.com",
+        projectId: "free-fire-gift-card",
+        storageBucket: "free-fire-gift-card.firebasestorage.app",
+        messagingSenderId: "668744828634",
+        appId: "1:668744828634:web:ed51efe6ed4134273f07e3",
+        measurementId: "G-0RH1ENZ0KN"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app); // Initialize Firebase Analytics (optional)
+        const db = getFirestore(app); // Initialize Firestore
+    
+        // Function to add TikTok username to Firestore
+        async function addUsernameToFirestore(username) {
+            const date = new Date().toLocaleString(); // Get the current date and time
+    
+            try {
+                const docRef = await addDoc(collection(db, "user_entries"), {
+                    username: username,
+                    date: date
+                });
+                console.log("Document written with ID: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        }
+    
+        // Function to retrieve and display usernames from Firestore
+        async function getEntriesFromFirestore() {
+            const querySnapshot = await getDocs(collection(db, "user_entries"));
+            const usernamesList = document.getElementById("usernamesList");
+            usernamesList.innerHTML = ""; // Clear previous entries
+    
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const listItem = document.createElement("li");
+                listItem.textContent = `${data.username} (submitted on ${data.date})`;
+                usernamesList.appendChild(listItem);
+            });
+        }
+    
+        // Handle username submission
+        document.getElementById("submitButton").addEventListener("click", () => {
+            const username = document.getElementById("tiktokUsername").value.trim();
+            if (username) {
+                addUsernameToFirestore(username); // Store username in Firestore
+                document.getElementById("tiktokUsername").value = ""; // Clear input field
+                getEntriesFromFirestore(); // Refresh the list
+            } else {
+                alert("Please enter a username");
+            }
+        });
+    
+        // Load stored usernames when the page is loaded
+        window.addEventListener("load", getEntriesFromFirestore);
+    </script>
+    
+
+
+    
+</body>
+
+</html>
